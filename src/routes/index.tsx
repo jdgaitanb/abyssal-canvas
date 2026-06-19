@@ -4,13 +4,8 @@ import { useRef, useState } from "react";
 import { Nav } from "@/components/Nav";
 import { MeshBackground } from "@/components/MeshBackground";
 import { Reveal } from "@/components/Reveal";
-import { ProjectCard, type Project } from "@/components/ProjectCard";
-import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
-import p4 from "@/assets/project-4.jpg";
-import p5 from "@/assets/project-5.jpg";
-import p6 from "@/assets/project-6.jpg";
+import { ProjectCard } from "@/components/ProjectCard";
+import { projects } from "@/lib/projects";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,15 +25,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const projects: Project[] = [
-  { id: "archai", index: "01", title: "Archai", tag: "Generative form research", year: "2025", image: p1, className: "md:col-span-7 md:row-span-2" },
-  { id: "holy-woah", index: "02", title: "Holy Woah", tag: "Sacred / Parametric lattice", year: "2024", image: p2, className: "md:col-span-5" },
-  { id: "urban-dj", index: "03", title: "Urban DJ", tag: "Responsive urban interface", year: "2025", image: p3, className: "md:col-span-5" },
-  { id: "mass", index: "04", title: "Mass", tag: "Computed monolith study", year: "2024", image: p4, className: "md:col-span-7" },
-  { id: "urban-demolition", index: "05", title: "Urban Demolition", tag: "Subtractive city / Ruin grammar", year: "2024", image: p6, className: "md:col-span-7" },
-  { id: "acoustic-skin", index: "06", title: "Acoustic Skin", tag: "Sonic envelope / Material", year: "2023", image: p5, className: "md:col-span-5" },
-];
 
 function Index() {
   const [hovered, setHovered] = useState<string | null>(null);
