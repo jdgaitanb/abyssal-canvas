@@ -40,8 +40,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Para TanStack Start con Nitro, el destino estático es este:
-          path: './.output/public'
+          # Confirmado: Tu proyecto guarda los archivos finales en './dist'
+          path: './dist'
 
       - name: Deploy to GitHub Pages
         id: deployment
