@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Si se compila en GitHub Actions aplica la subruta, en Lovable no toca nada
+    base: process.env.GITHUB_ACTIONS ? "/abyssal-canvas/" : "/",
+  }
 });
