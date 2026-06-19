@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { useRef, type MouseEvent } from "react";
+import { Link } from "@tanstack/react-router";
 
 export interface Project {
   id: string;
