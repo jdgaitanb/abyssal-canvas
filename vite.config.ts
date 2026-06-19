@@ -13,7 +13,7 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    // Si se compila en GitHub Actions aplica la subruta, en Lovable no toca nada
+    // Condición inteligente: Si se compila en GitHub Actions usa la subruta, si estás en Lovable usa la raíz normal '/'
     base: process.env.GITHUB_ACTIONS ? "/abyssal-canvas/" : "/",
   }
 });
