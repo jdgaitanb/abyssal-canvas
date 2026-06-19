@@ -10,17 +10,18 @@ import p2 from "@/assets/project-2.jpg";
 import p3 from "@/assets/project-3.jpg";
 import p4 from "@/assets/project-4.jpg";
 import p5 from "@/assets/project-5.jpg";
+import p6 from "@/assets/project-6.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NOVA — AI Architecture Studio" },
+      { title: "Juan Gaitán — AI in Architecture" },
       {
         name: "description",
         content:
           "Portfolio of an AI-in-Architecture designer. Parametric, generative, cinematic spatial systems.",
       },
-      { property: "og:title", content: "NOVA — AI Architecture Studio" },
+      { property: "og:title", content: "Juan Gaitán — AI in Architecture" },
       {
         property: "og:description",
         content: "Generative architecture, computed form, cinematic spatial systems.",
@@ -31,11 +32,12 @@ export const Route = createFileRoute("/")({
 });
 
 const projects: Project[] = [
-  { id: "p1", index: "01", title: "Volute Atrium", tag: "Cultural / Generative shell", year: "2025", image: p1, className: "md:col-span-7 md:row-span-2" },
-  { id: "p2", index: "02", title: "Voronoi Chapel", tag: "Sacred / Parametric lattice", year: "2024", image: p2, className: "md:col-span-5" },
-  { id: "p3", index: "03", title: "Lattice Spire", tag: "Mixed-use tower", year: "2025", image: p3, className: "md:col-span-5" },
-  { id: "p4", index: "04", title: "Mesh Threshold", tag: "Pavilion / Installation", year: "2023", image: p4, className: "md:col-span-7" },
-  { id: "p5", index: "05", title: "Cantilever House", tag: "Residential / Topographic", year: "2024", image: p5, className: "md:col-span-12" },
+  { id: "archai", index: "01", title: "Archai", tag: "Generative form research", year: "2025", image: p1, className: "md:col-span-7 md:row-span-2" },
+  { id: "holy-woah", index: "02", title: "Holy Woah", tag: "Sacred / Parametric lattice", year: "2024", image: p2, className: "md:col-span-5" },
+  { id: "urban-dj", index: "03", title: "Urban DJ", tag: "Responsive urban interface", year: "2025", image: p3, className: "md:col-span-5" },
+  { id: "mass", index: "04", title: "Mass", tag: "Computed monolith study", year: "2024", image: p4, className: "md:col-span-7" },
+  { id: "urban-demolition", index: "05", title: "Urban Demolition", tag: "Subtractive city / Ruin grammar", year: "2024", image: p6, className: "md:col-span-7" },
+  { id: "acoustic-skin", index: "06", title: "Acoustic Skin", tag: "Sonic envelope / Material", year: "2023", image: p5, className: "md:col-span-5" },
 ];
 
 function Index() {
@@ -75,7 +77,7 @@ function Index() {
               transition={{ duration: 0.9, delay: 0.35 }}
               className="font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground"
             >
-              AI · IN · ARCHITECTURE
+              Juan Gaitán · AI · IN · ARCHITECTURE
             </motion.p>
 
             <motion.h1
@@ -97,9 +99,10 @@ function Index() {
             >
               <div className="sm:col-span-2">
                 <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  Portfolio of an AI-in-Architecture designer. Generative form,
-                  parametric structure, and cinematic spatial systems — engineered
-                  at the boundary between computation and matter.
+                  Juan Gaitán — designer working at the intersection of artificial
+                  intelligence and architecture. Generative form, parametric
+                  structure, and cinematic spatial systems engineered at the
+                  boundary between computation and matter.
                 </p>
               </div>
               <div className="flex items-end justify-start sm:justify-end">
@@ -212,9 +215,23 @@ function Index() {
               <h2 className="mt-6 font-display text-5xl font-light leading-[0.95] tracking-tight sm:text-7xl">
                 Begin a<br /> transmission.
               </h2>
-              <div className="mt-10 space-y-2 font-display text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-                <p>studio@nova-iaac.ai</p>
-                <p>Barcelona / Remote</p>
+              <div className="mt-10 space-y-3 font-display text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+                <a href="mailto:jdgaitanb@gmail.com" className="block transition-colors hover:text-foreground">
+                  jdgaitanb@gmail.com
+                </a>
+                <a href="tel:+34675789379" className="block transition-colors hover:text-foreground">
+                  +34 675 789 379
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/juan-gaitan-035848187/es/?skipRedirect=true"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
+                >
+                  <span>LinkedIn</span>
+                  <span className="block size-1 rounded-full bg-accent-glow" />
+                </a>
+                <p className="pt-2 normal-case tracking-normal text-muted-foreground/70">Barcelona · IAAC</p>
               </div>
             </Reveal>
 
@@ -247,7 +264,7 @@ function Index() {
 
         <div className="hairline" />
         <footer className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-10 font-display text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2026 Nova Studio · All form rights reserved</span>
+          <span>© 2026 Juan Gaitán · All form rights reserved</span>
           <span>Designed in collaboration with machines.</span>
         </footer>
       </section>
