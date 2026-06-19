@@ -10,7 +10,7 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
-    // Esto adapta los enlaces automáticamente según el entorno (Lovable o GitHub)
+    // Adapta los enlaces internos automáticamente según el entorno (Lovable o GitHub Pages)
     basepath: import.meta.env.BASE_URL || "/",
   });
 
