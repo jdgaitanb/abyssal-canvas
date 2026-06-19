@@ -37,13 +37,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+     - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # TanStack Start / Vite suele compilar dentro de '.output/public' o 'dist'
-          # Ponemos 'dist' que es el estándar de Vite configurado por Lovable
-          path: './dist'
-
+          path: './.output/public'
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
