@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Esto le dice a tu app de Lovable que se aloja en tu ruta de GitHub Pages
+    base: '/jdgaitanb/', 
+  }
 });
