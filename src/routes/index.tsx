@@ -77,7 +77,7 @@ function Index() {
               transition={{ duration: 0.9, delay: 0.35 }}
               className="font-display text-[10px] uppercase tracking-[0.4em] text-muted-foreground"
             >
-              AI · IN · ARCHITECTURE
+              Juan Gaitán · AI · IN · ARCHITECTURE
             </motion.p>
 
             <motion.h1
@@ -99,9 +99,10 @@ function Index() {
             >
               <div className="sm:col-span-2">
                 <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  Portfolio of an AI-in-Architecture designer. Generative form,
-                  parametric structure, and cinematic spatial systems — engineered
-                  at the boundary between computation and matter.
+                  Juan Gaitán — designer working at the intersection of artificial
+                  intelligence and architecture. Generative form, parametric
+                  structure, and cinematic spatial systems engineered at the
+                  boundary between computation and matter.
                 </p>
               </div>
               <div className="flex items-end justify-start sm:justify-end">
