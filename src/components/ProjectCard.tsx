@@ -79,7 +79,11 @@ export function ProjectCard({
         }}
       />
 
-      <div className="relative aspect-[4/5] overflow-hidden">
+      <Link
+        to="/projects/$id"
+        params={{ id: project.id }}
+        className="relative block aspect-[4/5] overflow-hidden"
+      >
         <motion.img
           src={project.image}
           alt={project.title}
@@ -104,7 +108,7 @@ export function ProjectCard({
             {project.title}
           </h3>
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
