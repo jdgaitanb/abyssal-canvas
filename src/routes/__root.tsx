@@ -63,8 +63,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NOVA — AI Architecture Studio" },
+      { title: "Juan Gaitán - Portfolio" },
       { name: "description", content: "Portfolio of an AI-in-Architecture designer. Parametric, generative, cinematic." },
+      { property: "og:title", content: "Juan Gaitán - Portfolio" },
+      { name: "twitter:title", content: "Juan Gaitán - Portfolio" },
+      { property: "og:description", content: "Portfolio of an AI-in-Architecture designer. Parametric, generative, cinematic." },
+      { name: "twitter:description", content: "Portfolio of an AI-in-Architecture designer. Parametric, generative, cinematic." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/37860091-ef0e-41c9-811c-cdcdbbd4fbbf/id-preview-6b8f08cc--a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66.lovable.app-1781886577131.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/37860091-ef0e-41c9-811c-cdcdbbd4fbbf/id-preview-6b8f08cc--a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66.lovable.app-1781886577131.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
