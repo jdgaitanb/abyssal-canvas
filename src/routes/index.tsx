@@ -7,6 +7,25 @@ import { Reveal } from "@/components/Reveal";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/lib/projects";
 
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Juan Gaitán — AI in Architecture" },
+      {
+        name: "description",
+        content:
+          "Portfolio of an AI-in-Architecture designer. Parametric, generative, cinematic spatial systems.",
+      },
+      { property: "og:title", content: "Juan Gaitán — AI in Architecture" },
+      {
+        property: "og:description",
+        content: "Generative architecture, computed form, cinematic spatial systems.",
+      },
+    ],
+  }),
+  component: Index,
+});
+
 function Index() {
   const [hovered, setHovered] = useState<string | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
