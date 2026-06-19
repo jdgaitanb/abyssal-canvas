@@ -215,9 +215,23 @@ function Index() {
               <h2 className="mt-6 font-display text-5xl font-light leading-[0.95] tracking-tight sm:text-7xl">
                 Begin a<br /> transmission.
               </h2>
-              <div className="mt-10 space-y-2 font-display text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
-                <p>studio@nova-iaac.ai</p>
-                <p>Barcelona / Remote</p>
+              <div className="mt-10 space-y-3 font-display text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+                <a href="mailto:jdgaitanb@gmail.com" className="block transition-colors hover:text-foreground">
+                  jdgaitanb@gmail.com
+                </a>
+                <a href="tel:+34675789379" className="block transition-colors hover:text-foreground">
+                  +34 675 789 379
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/juan-gaitan-035848187/es/?skipRedirect=true"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
+                >
+                  <span>LinkedIn</span>
+                  <span className="block size-1 rounded-full bg-accent-glow" />
+                </a>
+                <p className="pt-2 normal-case tracking-normal text-muted-foreground/70">Barcelona · IAAC</p>
               </div>
             </Reveal>
 
@@ -250,7 +264,7 @@ function Index() {
 
         <div className="hairline" />
         <footer className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-10 font-display text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2026 Nova Studio · All form rights reserved</span>
+          <span>© 2026 Juan Gaitán · All form rights reserved</span>
           <span>Designed in collaboration with machines.</span>
         </footer>
       </section>

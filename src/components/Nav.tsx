@@ -32,7 +32,7 @@ export function Nav() {
         <a href="#home" className="flex items-center gap-2 pl-2 pr-1">
           <span className="block size-1.5 rounded-full bg-accent-glow shadow-[0_0_12px_var(--accent-glow)]" />
           <span className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-foreground">
-            Nova
+            Juan Gaitán
           </span>
         </a>
         <span className="h-4 w-px bg-border" />
