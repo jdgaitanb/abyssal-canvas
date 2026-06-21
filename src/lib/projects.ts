@@ -22,23 +22,25 @@ export const projects: ProjectDetail[] = [
     id: "archai",
     index: "01",
     title: "Archai",
-    tag: "Generative form research",
-    year: "2025",
+    tag: "AI compliance checker · Rhino plugin",
+    year: "2026",
     image: p1,
     className: "md:col-span-7 md:row-span-2",
-    subtitle: "A diffusion-driven study of archetypal form.",
-    location: "Barcelona · IAAC",
-    role: "Lead designer · Computational researcher",
-    tools: ["Stable Diffusion", "Grasshopper", "Rhino", "Python"],
+    subtitle:
+      "An AI-powered compliance checker that reads urban regulations and audits 3D models inside Rhino.",
+    location: "Barcelona · IAAC · MaAI 2025–2026",
+    role: "Designer · Developer (with Rafik El Khoury, Sumit Shingne, Dhruvil Bhanushali, Rudra Mhatre)",
+    tools: ["Rhino 3D", "Python", "NotebookLM", "ChromaDB", "RAG", "LLMs"],
     overview:
-      "Archai investigates how generative diffusion models can extract latent architectural archetypes from millennia of built heritage and re-synthesize them as new spatial proposals. The project trains a custom model on a curated dataset of vernacular and monumental architecture, then steers generations through parametric controls to produce coherent, buildable form.",
+      "Compliance checking is one of the most essential — and most tedious — parts of architectural design. Around 90% of firms and government bodies still do it manually, spending 55+ hours per project, and 50–60% of requirements are still missed. Archai is an AI-powered compliance checking plugin that integrates directly into the architectural design workflow as a Rhino 3D plugin. Tested against Barcelona's regulatory framework, it checks parameters such as building height, number of floors and plot area, and generates clear PDF reports with pass/fail results, regulatory references and guidance for improvement.",
     concept:
-      "Treating architecture as a continuous latent space rather than a catalogue of styles, Archai asks what lies between Romanesque mass and parametric shell. The result is a family of hybrid morphologies that feel ancient and unfamiliar at once.",
+      "Archai is not meant to replace architects, but to eliminate repetitive manual tasks, reduce errors, and make regulatory constraints legible from the earliest stages of design. The founding proof of concept analysed existing buildings in Begues, near Barcelona, comparing height, density, floor count and built area against municipal regulations — correctly identifying that most non-compliant cases were older houses predating current rules, and establishing that an AI-driven system could reliably interpret complex urban codes.",
     process:
-      "A diffusion pipeline outputs 2D field conditions which are reprojected into 3D via marching-cubes meshing in Grasshopper. The mesh is then optimized for structural depth, daylight access, and program fit using a multi-objective evolutionary solver.",
+      "A custom Rhino plug-in UI scans the model's layers and packages the spatial data into a structured EXPORT.JSON. Each 3D object is converted into a lightweight node in a Geometry Graph — stripped of meshes and reduced to dimensions, location and type — so an LLM can reason about it. In parallel, regulation PDFs are ingested through NotebookLM: the text is extracted, normalised, and split into semantic chunks with metadata. Those chunks are embedded and stored in a ChromaDB vector store, enabling a Retrieval-Augmented Generation pipeline that pulls only the rules relevant to the geometry being checked. The retrieved regulations and the geometry data are assembled into a single grounded prompt; the LLM performs the logical comparison and emits a PDF summary the architect opens directly inside Rhino.",
     outcome:
-      "A set of twelve speculative civic pavilions, each built from the same generative grammar but tuned to a distinct climate and ritual context.",
+      "A working Rhino-native interface where the architect inputs a project location, syncs the 3D volumetry, and receives a comprehensive compliance report citing specific rules. Validation runs on the same model show the system returns the same verdict ~92% of the time — a stable, assertive technical audit rather than a guess. The roadmap extends Archai beyond Barcelona to other cities and countries, into Revit, AutoCAD and other BIM platforms, with QGIS integration for infrastructural constraints and eventual application to client briefs, internal design standards, and firms' own project archives.",
   },
+
   {
     id: "holy-woah",
     index: "02",
