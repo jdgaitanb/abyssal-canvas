@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { Nav } from "@/components/Nav";
 import { Reveal } from "@/components/Reveal";
-import { getProject, projects } from "@/lib/projects";
+import { getProject, projects, type GalleryItem } from "@/lib/projects";
 
 export const Route = createFileRoute("/projects/$id")({
   head: ({ params }) => {
@@ -157,13 +157,41 @@ function ProjectPage() {
         </div>
       </section>
 
-      {/* IMAGE BLOCK */}
+      {/* GALLERY */}
       <section className="mx-auto max-w-7xl px-6 pb-32">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-2xl border border-border">
-            <img src={project.image} alt={project.title} className="h-auto w-full object-cover" />
+        {project.gallery && project.gallery.length > 0 ? (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {project.gallery.map((item: GalleryItem, i: number) => (
+              <Reveal
+                key={i}
+                delay={i * 0.04}
+                className={item.span === "full" ? "md:col-span-2" : ""}
+              >
+                <figure className="group">
+                  <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+                    <img
+                      src={item.src}
+                      alt={item.caption ?? project.title}
+                      loading="lazy"
+                      className="h-auto w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                    />
+                  </div>
+                  {item.caption && (
+                    <figcaption className="mt-4 font-display text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                      {item.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
+        ) : (
+          <Reveal>
+            <div className="relative overflow-hidden rounded-2xl border border-border">
+              <img src={project.image} alt={project.title} className="h-auto w-full object-cover" />
+            </div>
+          </Reveal>
+        )}
       </section>
 
       {/* NEXT */}
