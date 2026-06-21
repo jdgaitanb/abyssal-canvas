@@ -146,10 +146,8 @@ function ProjectPage() {
                     {b.k}
                   </h2>
                 </div>
-                <div className="md:col-span-8">
-                  <p className="text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                    {b.v}
-                  </p>
+                <div className="md:col-span-8 space-y-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
+                  {renderBody(b.v)}
                 </div>
               </div>
             </Reveal>
