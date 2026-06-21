@@ -46,6 +46,27 @@ export const Route = createFileRoute("/projects/$id")({
   component: ProjectPage,
 });
 
+function renderBody(text: string) {
+  const blocks = text.split(/\n\n+/);
+  return blocks.map((block, i) => {
+    const lines = block.split("\n");
+    const isList = lines.every((l) => l.trim().startsWith("- "));
+    if (isList) {
+      return (
+        <ul key={i} className="list-none space-y-3 border-l border-border pl-6">
+          {lines.map((l, j) => (
+            <li key={j} className="relative">
+              <span className="absolute -left-[1.625rem] top-[0.85em] block h-px w-3 bg-accent-glow" />
+              {l.replace(/^\s*-\s+/, "")}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return <p key={i}>{block}</p>;
+  });
+}
+
 function ProjectPage() {
   const { project } = Route.useLoaderData();
   const idx = projects.findIndex((p) => p.id === project.id);
@@ -146,10 +167,8 @@ function ProjectPage() {
                     {b.k}
                   </h2>
                 </div>
-                <div className="md:col-span-8">
-                  <p className="text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                    {b.v}
-                  </p>
+                <div className="md:col-span-8 space-y-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
+                  {renderBody(b.v)}
                 </div>
               </div>
             </Reveal>
