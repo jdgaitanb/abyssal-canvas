@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { Nav } from "@/components/Nav";
 import { Reveal } from "@/components/Reveal";
-import { getProject, projects } from "@/lib/projects";
+import { getProject, projects, type GalleryItem } from "@/lib/projects";
 
 export const Route = createFileRoute("/projects/$id")({
   head: ({ params }) => {
