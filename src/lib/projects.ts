@@ -6,6 +6,20 @@ import p4 from "@/assets/project-4.jpg";
 import p5 from "@/assets/project-5.jpg";
 import p6 from "@/assets/project-6.jpg";
 
+import archaiCover from "@/assets/archai/cover.jpg.asset.json";
+import archaiStats from "@/assets/archai/stats.jpg.asset.json";
+import archaiBegues from "@/assets/archai/begues.gif.asset.json";
+import archaiPlugin from "@/assets/archai/plugin.jpg.asset.json";
+import archaiPipeline from "@/assets/archai/pipeline.png.asset.json";
+import archaiWorkflow from "@/assets/archai/workflow.gif.asset.json";
+import archaiReport from "@/assets/archai/report.png.asset.json";
+
+export interface GalleryItem {
+  src: string;
+  caption?: string;
+  span?: "full" | "wide";
+}
+
 export interface ProjectDetail extends Project {
   subtitle: string;
   location: string;
@@ -15,7 +29,11 @@ export interface ProjectDetail extends Project {
   concept: string;
   process: string;
   outcome: string;
+  gallery?: GalleryItem[];
 }
+
+// keep unused p1 reference avoided: archai now uses its own cover
+void p1;
 
 export const projects: ProjectDetail[] = [
   {
@@ -24,7 +42,7 @@ export const projects: ProjectDetail[] = [
     title: "Archai",
     tag: "AI compliance checker · Rhino plugin",
     year: "2026",
-    image: p1,
+    image: archaiCover.url,
     className: "md:col-span-7 md:row-span-2",
     subtitle:
       "An AI-powered compliance checker that reads urban regulations and audits 3D models inside Rhino.",
@@ -39,6 +57,14 @@ export const projects: ProjectDetail[] = [
       "A custom Rhino plug-in UI scans the model's layers and packages the spatial data into a structured EXPORT.JSON. Each 3D object is converted into a lightweight node in a Geometry Graph — stripped of meshes and reduced to dimensions, location and type — so an LLM can reason about it. In parallel, regulation PDFs are ingested through NotebookLM: the text is extracted, normalised, and split into semantic chunks with metadata. Those chunks are embedded and stored in a ChromaDB vector store, enabling a Retrieval-Augmented Generation pipeline that pulls only the rules relevant to the geometry being checked. The retrieved regulations and the geometry data are assembled into a single grounded prompt; the LLM performs the logical comparison and emits a PDF summary the architect opens directly inside Rhino.",
     outcome:
       "A working Rhino-native interface where the architect inputs a project location, syncs the 3D volumetry, and receives a comprehensive compliance report citing specific rules. Validation runs on the same model show the system returns the same verdict ~92% of the time — a stable, assertive technical audit rather than a guess. The roadmap extends Archai beyond Barcelona to other cities and countries, into Revit, AutoCAD and other BIM platforms, with QGIS integration for infrastructural constraints and eventual application to client briefs, internal design standards, and firms' own project archives.",
+    gallery: [
+      { src: archaiStats.url, caption: "55+ hours per project · 50–60% of requirements still missed", span: "full" },
+      { src: archaiBegues.url, caption: "Proof of concept — compliance audit of existing buildings in Begues", span: "full" },
+      { src: archaiPlugin.url, caption: "Archai running natively inside Rhino 3D" },
+      { src: archaiPipeline.url, caption: "System diagram — from Rhino layers to LLM reasoning" },
+      { src: archaiWorkflow.url, caption: "Live workflow — sync volumetry, generate compliance report", span: "full" },
+      { src: archaiReport.url, caption: "Reliability — ~92% consistent verdicts across repeated runs" },
+    ],
   },
 
   {
