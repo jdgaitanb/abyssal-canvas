@@ -161,7 +161,7 @@ function ProjectPage() {
       <section className="mx-auto max-w-7xl px-6 pb-32">
         {project.gallery && project.gallery.length > 0 ? (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {project.gallery.map((item, i) => (
+            {project.gallery.map((item: GalleryItem, i: number) => (
               <Reveal
                 key={i}
                 delay={i * 0.04}
