@@ -14,6 +14,16 @@ import archaiPipeline from "@/assets/archai/pipeline.png.asset.json";
 import archaiWorkflow from "@/assets/archai/workflow.gif.asset.json";
 import archaiReport from "@/assets/archai/report.png.asset.json";
 
+import hwCrisis from "@/assets/holy-woah/crisis.png.asset.json";
+import hwRooftops from "@/assets/holy-woah/rooftops.png.asset.json";
+import hwCycle from "@/assets/holy-woah/cycle.png.asset.json";
+import hwKats from "@/assets/holy-woah/kats-overview.png.asset.json";
+import hwPipe1 from "@/assets/holy-woah/pipeline-1.png.asset.json";
+import hwPipe2 from "@/assets/holy-woah/pipeline-2.png.asset.json";
+import hwRlhf from "@/assets/holy-woah/rlhf.png.asset.json";
+import hwUi1 from "@/assets/holy-woah/ui-1.png.asset.json";
+import hwUi2 from "@/assets/holy-woah/ui-2.png.asset.json";
+
 export interface GalleryItem {
   src: string;
   caption?: string;
