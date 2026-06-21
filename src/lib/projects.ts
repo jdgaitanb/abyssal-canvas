@@ -44,6 +44,7 @@ export interface ProjectDetail extends Project {
 
 // keep unused p1 reference avoided: archai now uses its own cover
 void p1;
+void p2;
 
 export const projects: ProjectDetail[] = [
   {
