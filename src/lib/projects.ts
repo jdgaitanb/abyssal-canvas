@@ -139,23 +139,36 @@ export const projects: ProjectDetail[] = [
       "Demystifying AI bias through sound — a semicircular booth where three AI avatars hear the same city differently.",
     location: "Barcelona · IAAC · AI for All — Architecture & the Built Environment",
     role: "Designer · Developer (with Chun-Chun Chang, Gaelle Habib, Salvador Cantuarias)",
-    tools: ["C++", "Audio ML", "LED strips", "Physical computing", "Sound design"],
+    tools: [
+      "C++",
+      "ROS2 Kilted",
+      "ONNX Runtime",
+      "YAMNet",
+      "FastAPI",
+      "React 19 + Vite",
+      "Claude API",
+      "Arduino Uno",
+      "Raspberry Pi Pico",
+      "LED matrix",
+    ],
+    repo: "https://github.com/PaintDumpster/ai-dj_network",
     overview:
-      "Urban DJ demystifies AI bias through sound. Visitors interact with a semicircular booth inspired by Barcelona neighborhoods, pressing physical buttons to generate 30-second neighborhood-based audio scenes. The sound is visualized on a screen and through LED light strips along the circular wall. Three AI avatars — Vigil, Ludo, and Flora — classify the same audio differently because each was trained on a different dataset: surveillance, cultural, or natural sounds. By comparing their predictions and the highlighted soundwave segments, visitors understand that AI does not \"hear\" objectively; it interprets through the bias of its training data.",
+      "Urban DJ — also known as the AI DJ Audio Bias Pavilion — is an interactive kiosk that lets visitors compose an audio mix on a 4×4 keypad, then classifies it live with three parallel YAMNet models (surveillance, natural, cultural). Each model is voiced by a named AI persona — Vigil, Flora, and Ludo — who narrate what they hear in character on a React webapp and a 74×75 RGB LED matrix. By comparing their interpretations of the same sound, visitors understand that AI does not \"hear\" objectively; it interprets through the bias of its training data.",
     concept:
-      "Developed for AI for All, the project aims to demystify artificial intelligence by showing that AI systems are not neutral. Instead of explaining bias through technical diagrams or abstract definitions, we translate it into an interactive sound experience that visitors can see, hear, and physically trigger.\n\nThe installation is designed as a semicircular booth. At the center, visitors find a screen and a set of physical buttons shaped like Barcelona neighborhoods. Each button generates a 30-second soundscape inspired by the selected neighborhood, using familiar urban sounds such as crowds, music, fireworks, sirens, nature, water, or street activity. As the audio plays, the visitor sees the sound represented visually on the screen in a rhythm-based interface inspired by Guitar Hero. At the same time, the soundwave is projected onto LED light strips installed along the circular wall, turning the audio into an immersive spatial visualization.",
+      "Developed for AI for All, the project demystifies artificial intelligence by showing that AI systems are not neutral. Instead of explaining bias through technical diagrams or abstract definitions, we translate it into an interactive sound experience that visitors can see, hear, and physically trigger.\n\nThe installation is a semicircular booth. At the center, visitors find a screen and a set of physical buttons shaped like Barcelona neighborhoods. Each button is hold-to-play: pressing several buttons back to back chains the full, untrimmed sound effects into a single mix — often 90+ seconds of actual audio inside a 30-second recording window. As the audio plays, the soundwave is projected onto LED light strips installed along the circular wall, turning the audio into an immersive spatial visualization, and a rhythm-based interface inspired by Guitar Hero shows the same wave on screen.",
     process:
-      "The generated sound is then processed by three AI avatars: Vigil, Ludo, and Flora. Each avatar represents a different \"way of listening,\" shaped by a different training dataset:\n\n- Vigil — trained on surveillance and security-related sounds.\n- Ludo — trained on cultural and festival sounds.\n- Flora — trained on natural and environmental sounds.\n\nBecause each avatar has learned from a different sound world, the same audio can produce different interpretations. A sharp explosive sound might be classified by Vigil as gunshots, by Ludo as fireworks, and by Flora as thunder. None of the avatars are simply \"wrong\"; their answers reveal the limits and assumptions created by their training data.\n\nOn the screen, visitors see the prediction of each avatar, along with a short explanation of why the model interpreted the sound that way. When a visitor selects one avatar, the LED soundwave highlights the part of the audio that most influenced that avatar's classification — making clear that AI decisions are not magical or invisible, but based on patterns the model has learned to associate with certain labels.",
+      "Under the hood, the system runs as a ROS2 network on a Raspberry Pi 5. An Arduino Uno reads the 4×4 keypad and publishes PRESS / RELEASE / NAV / SELECT events. A C++ build_waveform node assembles the mix with libsndfile and streams a normalised waveform to two Raspberry Pi Picos that drive the LED matrix — Pico 1 covers clusters 1–3 (74×45 px, ~18 s of audio), Pico 2 covers clusters 4–5 (74×30 px, ~12 s).\n\nThree parallel yamnet_classification nodes — Vigil, Flora, Ludo — run ONNX Runtime on the full recording, batched across all YAMNet frames. Each persona is shaped by the dataset its classifier head was trained on:\n\n- Vigil — surveillance and security sounds. Red. Watchful security AI, urgent, gives safety advice on danger sounds.\n- Flora — natural and environmental sounds. Green. Calm AI tuned to the natural world, soothing and observational.\n- Ludo — cultural and festival sounds. Blue. Exuberant AI for city culture and community life, lively and inviting.\n\nA Python llm_node calls the Claude API to voice each persona in character. The prompt scales tone to confidence (>0.5 confident, 0.25–0.5 hedged, <0.25 \"nothing notable\") so noise-level detections aren't narrated as confirmed events, and it collapses YAMNet's per-window timeline into relative early / middle / late phases instead of literal seconds. A FastAPI + WebSocket web_bridge fans everything out to a React 19 + Vite webapp that shows each avatar's icon, its generated line, and — on expand — the raw top-5 detections.",
     outcome:
-      "Through this experience, the audience learns a central idea: AI does not understand the world objectively. It classifies, predicts, and interprets based on the data it was trained on. If the training data is limited, unbalanced, or shaped by a specific context, the AI's output will reflect those biases. By using sound as a shared and emotional language, Urban DJ makes AI bias understandable, memorable, and accessible to everyone.",
+      "Through this experience, the audience learns a central idea: AI does not understand the world objectively. The same explosive sound can be read by Vigil as gunshots, by Ludo as fireworks, and by Flora as thunder — none of the avatars are simply \"wrong\"; their answers reveal the limits and assumptions of their training data. When a visitor selects an avatar, the LED soundwave highlights the part of the audio that most influenced that classification, making clear that AI decisions are not magical or invisible but based on learned patterns. By using sound as a shared, emotional language, Urban DJ makes AI bias understandable, memorable, and accessible. Our first project written in C++ — full source, ROS2 launch files, and webapp are open on GitHub.",
     gallery: [
-      { src: udjInstallation.url, caption: "Installation image — the semicircular booth with neighborhood buttons", span: "full" },
-      { src: udjInterface.url, caption: "Interface development — rhythm-based visualization inspired by Guitar Hero" },
-      { src: udjRender.url, caption: "Render of space — LED soundwave along the circular wall" },
-      { src: udjAvatars.url, caption: "Avatar interpretation on screen — Vigil, Ludo and Flora", span: "full" },
+      { src: udjInstallation.url, caption: "Installation — the semicircular booth with neighborhood buttons", span: "full" },
+      { src: udjInterface.url, caption: "React webapp — rhythm-based visualization inspired by Guitar Hero" },
+      { src: udjRender.url, caption: "Render of space — 74×75 RGB LED matrix along the circular wall" },
+      { src: udjAvatars.url, caption: "Avatar interpretation on screen — Vigil (surveillance), Flora (natural), Ludo (cultural)", span: "full" },
       { src: udjExtra.url, caption: "Neighborhood-based soundscape exploration" },
     ],
   },
+
   {
     id: "mass",
     index: "04",
