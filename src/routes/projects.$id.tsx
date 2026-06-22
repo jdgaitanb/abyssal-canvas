@@ -145,8 +145,24 @@ function ProjectPage() {
               </div>
             ))}
           </div>
+          {project.repo && (
+            <div className="mt-10">
+              <div className="font-display text-[10px] uppercase tracking-[0.3em] text-accent-glow">
+                Repository
+              </div>
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-block text-sm leading-relaxed text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
+              >
+                {project.repo.replace(/^https?:\/\//, "")}
+              </a>
+            </div>
+          )}
         </Reveal>
       </section>
+
 
       {/* BODY */}
       <section className="mx-auto max-w-7xl px-6 py-32 sm:py-40">
