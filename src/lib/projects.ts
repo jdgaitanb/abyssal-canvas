@@ -129,22 +129,30 @@ export const projects: ProjectDetail[] = [
     id: "urban-dj",
     index: "03",
     title: "Urban DJ",
-    tag: "Responsive urban interface",
+    tag: "AI bias · interactive sound installation",
     year: "2025",
-    image: p3,
+    image: udjInstallation.url,
     className: "md:col-span-5",
-    subtitle: "The city as a mixing console.",
-    location: "Barcelona · IAAC",
-    role: "Interaction designer · ML engineer",
-    tools: ["TouchDesigner", "PyTorch", "ESP32", "Unreal Engine"],
+    subtitle:
+      "Demystifying AI bias through sound — a semicircular booth where three AI avatars hear the same city differently.",
+    location: "Barcelona · IAAC · AI for All — Architecture & the Built Environment",
+    role: "Designer · Developer (with Chun-Chun Chang, Gaelle Habib, Salvador Cantuarias)",
+    tools: ["C++", "Audio ML", "LED strips", "Physical computing", "Sound design"],
     overview:
-      "Urban DJ converts live urban telemetry — traffic, pedestrian density, noise, air quality — into a real-time audiovisual performance that re-skins a city block at night. Citizens become the performers, and the façade becomes the score.",
+      "Urban DJ demystifies AI bias through sound. Visitors interact with a semicircular booth inspired by Barcelona neighborhoods, pressing physical buttons to generate 30-second neighborhood-based audio scenes. The sound is visualized on a screen and through LED light strips along the circular wall. Three AI avatars — Vigil, Ludo, and Flora — classify the same audio differently because each was trained on a different dataset: surveillance, cultural, or natural sounds. By comparing their predictions and the highlighted soundwave segments, visitors understand that AI does not \"hear\" objectively; it interprets through the bias of its training data.",
     concept:
-      "Cities already perform; we just rarely listen. Urban DJ proposes a civic interface where data is not surveilled but staged, returning the sensed city back to its inhabitants as spectacle.",
+      "Developed for AI for All, the project aims to demystify artificial intelligence by showing that AI systems are not neutral. Instead of explaining bias through technical diagrams or abstract definitions, we translate it into an interactive sound experience that visitors can see, hear, and physically trigger.\n\nThe installation is designed as a semicircular booth. At the center, visitors find a screen and a set of physical buttons shaped like Barcelona neighborhoods. Each button generates a 30-second soundscape inspired by the selected neighborhood, using familiar urban sounds such as crowds, music, fireworks, sirens, nature, water, or street activity. As the audio plays, the visitor sees the sound represented visually on the screen in a rhythm-based interface inspired by Guitar Hero. At the same time, the soundwave is projected onto LED light strips installed along the circular wall, turning the audio into an immersive spatial visualization.",
     process:
-      "A small recurrent model classifies street states into musical modes; mapped through TouchDesigner into projection, light, and ambient sound. Edge ESP32 nodes handle local sensing with on-device inference.",
+      "The generated sound is then processed by three AI avatars: Vigil, Ludo, and Flora. Each avatar represents a different \"way of listening,\" shaped by a different training dataset:\n\n- Vigil — trained on surveillance and security-related sounds.\n- Ludo — trained on cultural and festival sounds.\n- Flora — trained on natural and environmental sounds.\n\nBecause each avatar has learned from a different sound world, the same audio can produce different interpretations. A sharp explosive sound might be classified by Vigil as gunshots, by Ludo as fireworks, and by Flora as thunder. None of the avatars are simply \"wrong\"; their answers reveal the limits and assumptions created by their training data.\n\nOn the screen, visitors see the prediction of each avatar, along with a short explanation of why the model interpreted the sound that way. When a visitor selects one avatar, the LED soundwave highlights the part of the audio that most influenced that avatar's classification — making clear that AI decisions are not magical or invisible, but based on patterns the model has learned to associate with certain labels.",
     outcome:
-      "A six-night public pilot on a façade in Poblenou, drawing ~3,800 visitors and producing an open dataset of urban rhythm signatures.",
+      "Through this experience, the audience learns a central idea: AI does not understand the world objectively. It classifies, predicts, and interprets based on the data it was trained on. If the training data is limited, unbalanced, or shaped by a specific context, the AI's output will reflect those biases. By using sound as a shared and emotional language, Urban DJ makes AI bias understandable, memorable, and accessible to everyone.",
+    gallery: [
+      { src: udjInstallation.url, caption: "Installation image — the semicircular booth with neighborhood buttons", span: "full" },
+      { src: udjInterface.url, caption: "Interface development — rhythm-based visualization inspired by Guitar Hero" },
+      { src: udjRender.url, caption: "Render of space — LED soundwave along the circular wall" },
+      { src: udjAvatars.url, caption: "Avatar interpretation on screen — Vigil, Ludo and Flora", span: "full" },
+      { src: udjExtra.url, caption: "Neighborhood-based soundscape exploration" },
+    ],
   },
   {
     id: "mass",
