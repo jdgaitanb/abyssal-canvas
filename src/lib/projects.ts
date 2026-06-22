@@ -24,6 +24,12 @@ import hwRlhf from "@/assets/holy-woah/rlhf.png.asset.json";
 import hwUi1 from "@/assets/holy-woah/ui-1.png.asset.json";
 import hwUi2 from "@/assets/holy-woah/ui-2.png.asset.json";
 
+import udjInstallation from "@/assets/urban-dj/installation.jpg.asset.json";
+import udjInterface from "@/assets/urban-dj/interface.png.asset.json";
+import udjRender from "@/assets/urban-dj/render.png.asset.json";
+import udjAvatars from "@/assets/urban-dj/avatars.png.asset.json";
+import udjExtra from "@/assets/urban-dj/extra.png.asset.json";
+
 export interface GalleryItem {
   src: string;
   caption?: string;
@@ -45,6 +51,7 @@ export interface ProjectDetail extends Project {
 // keep unused p1 reference avoided: archai now uses its own cover
 void p1;
 void p2;
+void p3;
 
 export const projects: ProjectDetail[] = [
   {
