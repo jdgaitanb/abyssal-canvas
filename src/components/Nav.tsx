@@ -1,11 +1,12 @@
+import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "IAAC Projects", href: "#projects" },
-  { label: "Vision", href: "#vision" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", hash: "home" },
+  { label: "IAAC Projects", hash: "projects" },
+  { label: "Vision", hash: "vision" },
+  { label: "Contact", hash: "contact" },
 ];
 
 export function Nav() {
