@@ -1,11 +1,12 @@
+import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "IAAC Projects", href: "#projects" },
-  { label: "Vision", href: "#vision" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", hash: "home" },
+  { label: "IAAC Projects", hash: "projects" },
+  { label: "Vision", hash: "vision" },
+  { label: "Contact", hash: "contact" },
 ];
 
 export function Nav() {
@@ -29,23 +30,28 @@ export function Nav() {
           scrolled ? "shadow-[0_8px_40px_-12px_rgba(120,180,255,0.18)]" : ""
         }`}
       >
-        <a href="#home" className="flex items-center gap-2 pl-2 pr-1">
+        <Link
+          to="/"
+          hash="home"
+          className="flex items-center gap-2 pl-2 pr-1"
+        >
           <span className="block size-1.5 rounded-full bg-accent-glow shadow-[0_0_12px_var(--accent-glow)]" />
           <span className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-foreground">
             Juan Gaitán
           </span>
-        </a>
+        </Link>
         <span className="h-4 w-px bg-border" />
         <ul className="flex items-center gap-1 sm:gap-2">
           {links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
+            <li key={l.hash}>
+              <Link
+                to="/"
+                hash={l.hash}
                 className="group relative rounded-full px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground sm:text-xs"
               >
                 {l.label}
                 <span className="pointer-events-none absolute inset-x-3 -bottom-0.5 h-px scale-x-0 bg-accent-glow shadow-[0_0_10px_var(--accent-glow)] transition-transform duration-500 group-hover:scale-x-100" />
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
