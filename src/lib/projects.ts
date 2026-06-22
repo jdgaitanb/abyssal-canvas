@@ -46,7 +46,9 @@ export interface ProjectDetail extends Project {
   process: string;
   outcome: string;
   gallery?: GalleryItem[];
+  repo?: string;
 }
+
 
 // keep unused p1 reference avoided: archai now uses its own cover
 void p1;
