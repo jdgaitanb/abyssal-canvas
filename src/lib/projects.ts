@@ -30,6 +30,33 @@ import udjRender from "@/assets/urban-dj/render.png.asset.json";
 import udjAvatars from "@/assets/urban-dj/avatars.png.asset.json";
 import udjExtra from "@/assets/urban-dj/extra.png.asset.json";
 
+import asCeiling from "@/assets/acoustic-skin/ceiling.jpg.asset.json";
+import asRcp from "@/assets/acoustic-skin/rcp.jpg.asset.json";
+import asPrinting from "@/assets/acoustic-skin/printing.png.asset.json";
+import asLaser from "@/assets/acoustic-skin/lasercut.png.asset.json";
+import asComponents from "@/assets/acoustic-skin/components.png.asset.json";
+import asCircuit from "@/assets/acoustic-skin/circuit.jpeg.asset.json";
+import asPrototype from "@/assets/acoustic-skin/prototype.gif.asset.json";
+import asFuture from "@/assets/acoustic-skin/future.jpeg.asset.json";
+
+import sdScheme from "@/assets/urban-demolition/scheme.png.asset.json";
+import sdWorkflow from "@/assets/urban-demolition/workflow.png.asset.json";
+import sdHardware from "@/assets/urban-demolition/hardware.png.asset.json";
+import sdAigen from "@/assets/urban-demolition/aigen.png.asset.json";
+import sdDetection from "@/assets/urban-demolition/detection.png.asset.json";
+import sdAruco from "@/assets/urban-demolition/aruco.png.asset.json";
+import sdFramework from "@/assets/urban-demolition/framework.png.asset.json";
+import sdRobot from "@/assets/urban-demolition/robot.png.asset.json";
+import sdCamera from "@/assets/urban-demolition/camera.png.asset.json";
+import sdCalib from "@/assets/urban-demolition/calib.png.asset.json";
+import sdAidetect from "@/assets/urban-demolition/aidetect.png.asset.json";
+import sdArucodetect from "@/assets/urban-demolition/arucodetect.png.asset.json";
+import sdMatch from "@/assets/urban-demolition/match.jpeg.asset.json";
+import sdPlan from "@/assets/urban-demolition/plan.png.asset.json";
+import sdGap1 from "@/assets/urban-demolition/gap1.png.asset.json";
+import sdGap2 from "@/assets/urban-demolition/gap2.png.asset.json";
+
+
 export interface GalleryItem {
   src: string;
   caption?: string;
