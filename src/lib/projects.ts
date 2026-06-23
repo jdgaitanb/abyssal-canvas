@@ -15,6 +15,7 @@ import archaiWorkflow from "@/assets/archai/workflow.gif.asset.json";
 import archaiReport from "@/assets/archai/report.png.asset.json";
 
 import hwCrisis from "@/assets/holy-woah/crisis.png.asset.json";
+import hwHero from "@/assets/holy-woah/hero.png.asset.json";
 import hwRooftops from "@/assets/holy-woah/rooftops.png.asset.json";
 import hwCycle from "@/assets/holy-woah/cycle.png.asset.json";
 import hwKats from "@/assets/holy-woah/kats-overview.png.asset.json";
@@ -31,6 +32,7 @@ import udjAvatars from "@/assets/urban-dj/avatars.png.asset.json";
 import udjExtra from "@/assets/urban-dj/extra.png.asset.json";
 
 import asCeiling from "@/assets/acoustic-skin/ceiling.jpg.asset.json";
+import asHero from "@/assets/acoustic-skin/hero.png.asset.json";
 import asRcp from "@/assets/acoustic-skin/rcp.jpg.asset.json";
 import asPrinting from "@/assets/acoustic-skin/printing.png.asset.json";
 import asLaser from "@/assets/acoustic-skin/lasercut.png.asset.json";
@@ -40,6 +42,7 @@ import asPrototype from "@/assets/acoustic-skin/prototype.gif.asset.json";
 import asFuture from "@/assets/acoustic-skin/future.jpeg.asset.json";
 
 import sdScheme from "@/assets/urban-demolition/scheme.png.asset.json";
+import sdHero from "@/assets/urban-demolition/hero.png.asset.json";
 import sdWorkflow from "@/assets/urban-demolition/workflow.png.asset.json";
 import sdHardware from "@/assets/urban-demolition/hardware.png.asset.json";
 import sdAigen from "@/assets/urban-demolition/aigen.png.asset.json";
@@ -120,7 +123,7 @@ export const projects: ProjectDetail[] = [
     title: "Holy Woah",
     tag: "Urban rooftop farming · KATS AI",
     year: "2026",
-    image: hwCrisis.url,
+    image: hwHero.url,
     className: "md:col-span-5",
     subtitle:
       "Reviving Barcelona's local agriculture from its rooftops — paired with KATS, a 3-layer machine-learning system that learns from the urban farmer.",
@@ -225,7 +228,7 @@ export const projects: ProjectDetail[] = [
     title: "Smart Demolition",
     tag: "AI-driven material identification & sorting",
     year: "2026",
-    image: sdScheme.url,
+    image: sdHero.url,
     className: "md:col-span-7",
     subtitle:
       "An automated, AI-powered material recognition and sorting pipeline that turns demolition debris into categorised, reusable assets.",
@@ -265,7 +268,7 @@ export const projects: ProjectDetail[] = [
     title: "Acoustic Skin",
     tag: "Intelligent, shape-shifting sound control",
     year: "2026",
-    image: asCeiling.url,
+    image: asHero.url,
     className: "md:col-span-5",
     subtitle:
       "An acoustic panel that morphs its surface geometry in real time to control the way sound interacts with the environment.",
