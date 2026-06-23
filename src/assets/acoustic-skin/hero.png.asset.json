@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "83701082-f1cc-4ad9-8a98-e1ed42258ce6",
+  "asset_id": "0ca1ce73-7d94-4116-b117-91fa82f6ce57",
   "project_id": "a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66",
-  "url": "/__l5e/assets-v1/83701082-f1cc-4ad9-8a98-e1ed42258ce6/acoustic-skin-hero.png",
-  "r2_key": "a/v1/a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66/83701082-f1cc-4ad9-8a98-e1ed42258ce6/acoustic-skin-hero.png",
-  "original_filename": "acoustic-skin-hero.png",
-  "size": 43601,
-  "content_type": "image/png",
-  "created_at": "2026-06-23T12:37:00Z"
+  "url": "/__l5e/assets-v1/0ca1ce73-7d94-4116-b117-91fa82f6ce57/hero.png",
+  "r2_key": "a/v1/a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66/0ca1ce73-7d94-4116-b117-91fa82f6ce57/hero.png",
+  "original_filename": "hero.png",
+  "size": 185380,
+  "content_type": "image/jpeg",
+  "created_at": "2026-06-23T12:47:46Z"
 }
