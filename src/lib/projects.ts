@@ -85,6 +85,7 @@ export interface ProjectDetail extends Project {
 void p1;
 void p2;
 void p3;
+void p4;
 
 export const projects: ProjectDetail[] = [
   {
