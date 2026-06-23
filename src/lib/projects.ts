@@ -3,8 +3,8 @@ import p1 from "@/assets/project-1.jpg";
 import p2 from "@/assets/project-2.jpg";
 import p3 from "@/assets/project-3.jpg";
 import p4 from "@/assets/project-4.jpg";
-import p5 from "@/assets/project-5.jpg";
-import p6 from "@/assets/project-6.jpg";
+
+
 
 import archaiCover from "@/assets/archai/cover.jpg.asset.json";
 import archaiStats from "@/assets/archai/stats.jpg.asset.json";
@@ -29,6 +29,33 @@ import udjInterface from "@/assets/urban-dj/interface.png.asset.json";
 import udjRender from "@/assets/urban-dj/render.png.asset.json";
 import udjAvatars from "@/assets/urban-dj/avatars.png.asset.json";
 import udjExtra from "@/assets/urban-dj/extra.png.asset.json";
+
+import asCeiling from "@/assets/acoustic-skin/ceiling.jpg.asset.json";
+import asRcp from "@/assets/acoustic-skin/rcp.jpg.asset.json";
+import asPrinting from "@/assets/acoustic-skin/printing.png.asset.json";
+import asLaser from "@/assets/acoustic-skin/lasercut.png.asset.json";
+import asComponents from "@/assets/acoustic-skin/components.png.asset.json";
+import asCircuit from "@/assets/acoustic-skin/circuit.jpeg.asset.json";
+import asPrototype from "@/assets/acoustic-skin/prototype.gif.asset.json";
+import asFuture from "@/assets/acoustic-skin/future.jpeg.asset.json";
+
+import sdScheme from "@/assets/urban-demolition/scheme.png.asset.json";
+import sdWorkflow from "@/assets/urban-demolition/workflow.png.asset.json";
+import sdHardware from "@/assets/urban-demolition/hardware.png.asset.json";
+import sdAigen from "@/assets/urban-demolition/aigen.png.asset.json";
+import sdDetection from "@/assets/urban-demolition/detection.png.asset.json";
+import sdAruco from "@/assets/urban-demolition/aruco.png.asset.json";
+import sdFramework from "@/assets/urban-demolition/framework.png.asset.json";
+import sdRobot from "@/assets/urban-demolition/robot.png.asset.json";
+import sdCamera from "@/assets/urban-demolition/camera.png.asset.json";
+import sdCalib from "@/assets/urban-demolition/calib.png.asset.json";
+import sdAidetect from "@/assets/urban-demolition/aidetect.png.asset.json";
+import sdArucodetect from "@/assets/urban-demolition/arucodetect.png.asset.json";
+import sdMatch from "@/assets/urban-demolition/match.jpeg.asset.json";
+import sdPlan from "@/assets/urban-demolition/plan.png.asset.json";
+import sdGap1 from "@/assets/urban-demolition/gap1.png.asset.json";
+import sdGap2 from "@/assets/urban-demolition/gap2.png.asset.json";
+
 
 export interface GalleryItem {
   src: string;
@@ -107,6 +134,8 @@ export const projects: ProjectDetail[] = [
       "RLHF",
       "Digital Twin",
     ],
+    repo: "https://github.com/rojda34/Holy-Woah---Smart-Farming",
+
     overview:
       "The global agricultural system is facing a severe crisis. Currently, agriculture is responsible for consuming a staggering 79% of global freshwater. Despite this massive consumption, the process is highly inefficient, with 60% of irrigation water being lost. Furthermore, modern farming relies heavily on chemicals, seeing a 70% increase in pesticides, while an estimated 40% of costs are tied directly to transportation.\n\nTo address this pressing issue, a new project dubbed Holy Woah proposes a radical shift towards urban rooftop farming. Focusing on Barcelona — a city that has seen a 77% drop in local food production since the 1970s and where only 9% of land is currently used for farming — the project identifies a massive untapped resource: 1,764 hectares of potential farming space right on the city's rooftops.\n\nTaking inspiration from successful urban farming proofs-of-concept in densely populated cities like Singapore, Hong Kong, and New York (such as Gotham Greens, which uses 95% less water through hydroponics), the project aims to make sustainable farming accessible to everyone.",
     concept:
@@ -193,45 +222,76 @@ export const projects: ProjectDetail[] = [
   {
     id: "urban-demolition",
     index: "05",
-    title: "Urban Demolition",
-    tag: "Subtractive city / Ruin grammar",
-    year: "2024",
-    image: p6,
+    title: "Smart Demolition",
+    tag: "AI-driven material identification & sorting",
+    year: "2026",
+    image: sdScheme.url,
     className: "md:col-span-7",
-    subtitle: "A grammar for unbuilding the 20th-century city.",
-    location: "Barcelona · IAAC",
-    role: "Urban researcher · Computational designer",
-    tools: ["QGIS", "Python", "Grasshopper", "Diffusion models"],
+    subtitle:
+      "An automated, AI-powered material recognition and sorting pipeline that turns demolition debris into categorised, reusable assets.",
+    location: "Barcelona · IAAC · MRAC 2025–2026",
+    role: "Designer · Developer (with Subha Tahsin Saba, Jiani Zhang, Priyam Gulati Ravinder, Dominika Klopotek)",
+    tools: ["Computer Vision", "Roboflow", "Python", "ROS", "ArUco", "Robotic Arm"],
     overview:
-      "Urban Demolition reframes demolition as a design act. A trained model proposes which fragments of obsolete urban tissue to keep, which to dismantle, and which to let ruin into landscape — generating a new typology of partial city.",
+      "The global construction industry currently faces a significant sustainability crisis, characterized by the massive generation of material waste that often bypasses recycling streams. This challenge stems primarily from a technological gap: the lack of real-time identification, sorting, and decision-making systems on active demolition sites. Without an efficient way to distinguish between various debris types, valuable resources are frequently lost to landfills.\n\nTo bridge this gap, our initiative focuses on developing an automated, AI-powered material recognition and sorting pipeline. By integrating advanced computer vision and machine learning algorithms, this system would enable faster on-site material separation, ensuring that materials like masonry and structural components are accurately identified for salvage. This shift toward automation is more than a technical upgrade; it is a fundamental catalyst for data-driven circular construction workflows. By transforming disorganised rubble into categorised, reusable assets, we can significantly increase reuse and recycling rates. This approach moves the industry away from traditional linear consumption and toward a circular economy, where the life cycle of construction materials is extended, environmental impacts are minimised, and \"waste\" is redefined as a valuable resource for future builds.",
     concept:
-      "Subtraction is the missing verb of urbanism. The project builds a grammar for it, treating ruin as a legitimate state rather than failure of maintenance.",
+      "This project proposes an automated, AI-powered material recognition and sorting pipeline to facilitate the circular reuse of construction and demolition debris. An integrated computer vision system monitors a workspace containing mixed waste — specifically clay, concrete, steel, and plastic — identifying individual components through a custom-trained object detection model.\n\nEach detected element is analyzed to determine its material classification and precise spatial orientation. The system processes this visual data through a matching logic that categorizes the debris, ensuring high-purity streams for architectural salvage. This information is then translated into actionable task planning, bridging the gap between digital perception and physical manipulation. A robotic arm subsequently retrieves the categorized pieces and executes precise pick-and-place maneuvers, sorting the materials into designated zones for immediate reintegration into the construction lifecycle.\n\nTo successfully bridge the gap between AI perception and physical sorting, the project relies on a robust integration of hardware and software, structured into two primary layers to ensure the system is both powerful enough for real-time processing and flexible enough for iterative development.",
     process:
-      "GIS layers (age, structural condition, embodied carbon, social value) feed a scoring model. A diffusion model then hallucinates the post-demolition fabric, evaluated against carbon and biodiversity targets.",
+      "AI Model Training — To enable the robotic system to recognize construction materials, we trained a basic AI object detection model. The first step was preparing a dataset: 300 labeled images of construction materials, manually annotated, captured across different camera angles, various lighting conditions, and some partially hidden objects (occlusions). The dataset covered brick, concrete, steel and plastic. After preparing the dataset, we trained an object detection model using the Roboflow platform, balancing accuracy (correctly identifying materials) and speed (running fast enough for real-time detection). The result is a trained model that can recognize construction materials in real time.\n\nReal-Time Object Detection — An RGB camera mounted on a fixed position overlooking the workspace continuously captures images of the working area. The captured images are sent to the AI detection model, which performs live material identification from the camera feed, bounding box generation around detected objects, material classification labels (brick, concrete, plastic…) and confidence score evaluation. The overall workflow follows a simple pipeline: vision system → AI model → robotic control logic.\n\nFramework — Our pick-and-place pipeline is the central nervous system of the project, seamlessly connecting digital perception to robotic action. The process begins at the Camera Node, where raw imagery is captured and aligned with the workspace through a one-time Table Calibration, mapping 2D visual data to 3D physical coordinates. The Detect phase runs a dual-track analysis: the AI Model Detector classifies material types, while the ArUco Detector establishes precise spatial markers. These data streams converge in the Matcher, which applies sorting rules to specific objects. Once tasks are matched, the Pick-and-Place Planner generates a final execution script. Before physical movement, the system validates the path in a digital environment, ultimately sending the command to the Move Group Node for precise manipulation.",
     outcome:
-      "A speculative master plan for a 14-hectare post-industrial zone, projecting 38% embodied carbon savings versus a conventional redevelopment.",
+      "Robotic Object Grabbing & Placement — After the materials are detected by the vision system, the robotic arm performs the grabbing and placement tasks. The robotic control system receives object location and a material selection command for sorting, calculates an appropriate grasp point, and picks the correct object from the mixed pile. Once picked up, the arm deposits the material into the assigned container, using grid-based positioning for organized transport or storage.\n\nAchievements — successful real-time material detection, an automated sorting workflow, and functional human–AI collaboration. Limitations — dataset size, material surface similarity, and edge cases such as damaged or mixed materials. Future improvements — larger and more diverse datasets, additional material classes, a full autonomy mode, integration with material reuse databases, and CO₂ and cost impact calculations.\n\nSmart Demolition is a project of IAAC, Institute for Advanced Architecture of Catalonia, developed in the Master in Robotics & Advanced Construction 01 (2025–2026) by Subha Tahsin Saba, Jiani Zhang, Priyam Gulati Ravinder, Dominika Klopotek and Juan Gaitán during the MRAC01 25/26 Hardware II course with Hamid Peiro and Aleksandra Kraeva.",
+    gallery: [
+      { src: sdScheme.url, caption: "Project overview — AI-powered material recognition and sorting pipeline", span: "full" },
+      { src: sdWorkflow.url, caption: "Workflow — from mixed debris to categorised, reusable assets", span: "full" },
+      { src: sdHardware.url, caption: "Project infrastructure — hardware and software layers", span: "full" },
+      { src: sdAigen.url, caption: "Trained model recognising construction materials in real time" },
+      { src: sdDetection.url, caption: "Real-time detection — bounding boxes, labels and confidence scores" },
+      { src: sdAruco.url, caption: "ArUco-marked box for spatial reference" },
+      { src: sdFramework.url, caption: "Vision-based pick-and-place pipeline — Camera · Calibration · Detect · Match · Plan · Move", span: "full" },
+      { src: sdRobot.url, caption: "Robotic object grabbing & placement" },
+      { src: sdCamera.url, caption: "Camera Node" },
+      { src: sdCalib.url, caption: "Table Calibration" },
+      { src: sdAidetect.url, caption: "Detect — AI model detector" },
+      { src: sdArucodetect.url, caption: "Calibration — ArUco detector" },
+      { src: sdMatch.url, caption: "Match — sorting rules applied to detected objects" },
+      { src: sdPlan.url, caption: "Pick and place plan" },
+      { src: sdGap1.url, caption: "Gap to real — digital validation before physical execution" },
+      { src: sdGap2.url, caption: "Move Group Node — precise manipulation" },
+    ],
   },
   {
     id: "acoustic-skin",
     index: "06",
     title: "Acoustic Skin",
-    tag: "Sonic envelope / Material",
-    year: "2023",
-    image: p5,
+    tag: "Intelligent, shape-shifting sound control",
+    year: "2026",
+    image: asCeiling.url,
     className: "md:col-span-5",
-    subtitle: "A façade tuned to the noise of its street.",
-    location: "Barcelona · IAAC",
-    role: "Material researcher · Designer",
-    tools: ["Pachyderm Acoustics", "Grasshopper", "CNC", "Mycelium"],
+    subtitle:
+      "An acoustic panel that morphs its surface geometry in real time to control the way sound interacts with the environment.",
+    location: "Barcelona · IAAC · MaAI 2025–2026",
+    role: "Designer · Developer (with Dominika Klopotek, Gaelle Habib, Rojda Gulel, Rim Choufani, Chun-Chun Chang)",
+    tools: ["Arduino Uno", "MG90S Servos", "Sound Sensors", "3D Printing", "Laser Cutting", "Cork & Lycra"],
     overview:
-      "Acoustic Skin is a parametric façade panel system whose perforation pattern is computed from the spectral signature of the surrounding urban noise. Each panel is a localized acoustic response, grown from mycelium composite.",
+      "Acoustic Skin is an acoustic panel that morphs its surface geometry in real time to control the way sound interacts with the environment. It uses an array of miniature pistons embedded in a felt-covered membrane, behaving like a living, breathing skin that adapts its texture and porosity to the acoustic conditions of a space.\n\nSystem behaviour — Listen → Detect noise → Adjust geometry → Measure effect → Return to rest.",
     concept:
-      "A building's skin should know the sound of its street. Acoustic Skin closes the loop between sensing and material, producing envelopes that absorb exactly what their context emits.",
+      "First idea — the system could be integrated into a real architectural ceiling. The concrete slab sits at the top, followed by a structural frame holding the piston system. Below that is the ceiling level where the flexible acoustic surface is installed. When the actuators extend, they push the membrane downward, creating a dynamic contour that adapts in real time to sound conditions. A red dashed line represents the limit of maximum extension, indicating how far the ceiling can safely deform without interfering with the space below. This forms a responsive acoustic layer embedded between the structural ceiling and the interior room.\n\nLocating the noise — the system continuously listens to the surrounding environment through an array of embedded microphones distributed across the panel or ceiling field. These sensors measure overall sound pressure level and spatial differences in intensity to identify where the noise is strongest.",
     process:
-      "Street-level recordings are converted to absorption targets across octave bands. A genetic algorithm searches perforation geometries that meet those targets while satisfying daylight and privacy constraints.",
+      "3D Printing — Linear servo actuators were fabricated using the open-source design from Thingiverse #3170748. After importing the components into Bambu Studio, the prints were optimised for tolerance and later sanded to ensure smooth piston movement. This stage was critical for minimizing friction and achieving reliable actuation during rapid, repeated shape changes.\n\nLaser Cutting — Two materials were tested for the skin's tactile surface: 3 mm cork (selected for its natural sound-absorbing properties) and 1.15 mm cardboard (used for fast iteration and pattern studies). Both were laser-cut with a perforated triangular tessellation that distributes stress evenly, so when the actuators push from below the cork bends smoothly without cracking along a single direction. Unlike square or hexagonal grids, triangles prevent directional bias and let the panel deform in multiple directions, creating more organic, controllable curvature.\n\nTesting (sensor calibration) — Initial system tests ran each motor individually with a simplified script to confirm proper actuation. Two motors were identified as faulty and removed. Each sound sensor was then calibrated to ensure consistent sensitivity across the grid.\n\nComponents — Arduino Uno reads all sound sensor inputs and sends movement commands to the servos. ADRKY-037 LH analog sound sensors feed continuous voltage signals to the microcontroller. MG90S Micro Servos rotate up to 180° and drive the 3D-printed gear system inside each linear actuator, converting rotation into vertical linear displacement via a rack-and-pinion mechanism.\n\nCircuit Diagram — the diagram shows one sound sensor and one servo motor as the pattern for one pair of a 9×9 matrix, repeated nine times. All nine sound sensors connect to dedicated analog pins, the nine servo motors are powered directly from a 5 V / 10 A power supply (not from the Arduino's 5 V pin), and each control signal connects to a separate digital pin.",
     outcome:
-      "A 12-panel prototype wall, measured to reduce street-facing reverberation by 31% in the 500–2000 Hz range.",
+      "Prototype — a 430 × 430 mm wooden frame holds all components in a 3×3 grid: 9 linear servo actuators (a scaled-down stand-in for the full 9×9 matrix), a Lycra fabric intermediary layer chosen for its elasticity, and a 400 × 400 mm laser-cut cork panel with a triangulated pattern that provides mesh-like flexibility and natural sound-absorbing qualities. This setup tested material flexibility, actuator performance and overall surface morphing before considering larger architectural applications.\n\nLimitations — collecting nine micro servos and nine sound sensors in time was challenging; the 180° servo rotation, combined with the small gears matched to the actuator dimensions, limited the extension range; an ESP32 setup required a bigger 5 V / 10 A power supply; and the laser-cut cork was too thick to move smoothly, so the final visualization relied mainly on the fabric.\n\nFuture optimisation — in a perfect setting, the gears extend the linear actuator even further, pushing a light and flexible sound-absorbing fabric. In an architectural setting, it becomes a dynamic sound-absorbing ceiling, taking sound control to another level.\n\nAcoustic Skin is a project of IAAC, Institute for Advanced Architecture of Catalonia, developed in the Master in AI for Architecture and the Built Environment 01 (2025–2026) by Dominika Klopotek, Juan Gaitán, Gaelle Habib, Rojda Gulel, Rim Choufani and Chun-Chun Chang during the MRAC01 MAAI01 25/26 Hardware I course with Huanyu Li, Hamid Peiro and Aleksandra Kraeva.",
+    gallery: [
+      { src: asCeiling.url, caption: "First idea — system integrated into an architectural ceiling", span: "full" },
+      { src: asRcp.url, caption: "Locating the noise — embedded microphone array across the ceiling field", span: "full" },
+      { src: asPrinting.url, caption: "3D Printing — linear servo actuators (Thingiverse #3170748)", span: "full" },
+      { src: asLaser.url, caption: "Laser Cutting — triangular tessellation in cork for uniform flexibility", span: "full" },
+      { src: asComponents.url, caption: "Components — Arduino Uno · ADRKY-037 LH · MG90S · 3D-printed linear actuators", span: "full" },
+      { src: asCircuit.url, caption: "Circuit Diagram — pattern for one sensor/servo pair, repeated across the 9×9 matrix" },
+      { src: asPrototype.url, caption: "Prototype — 430 × 430 mm frame with 3×3 actuator grid morphing the cork surface", span: "full" },
+      { src: asFuture.url, caption: "Future optimisation — dynamic sound-absorbing architectural ceiling", span: "full" },
+    ],
   },
 ];
+
 
 export const getProject = (id: string) => projects.find((p) => p.id === id);
