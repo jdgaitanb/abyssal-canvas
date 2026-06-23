@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "1509ba3e-c833-43b5-af59-c9d477a6cc3f",
+  "asset_id": "cb20c703-aa77-41f1-863c-5f2528f4c0e5",
   "project_id": "a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66",
-  "url": "/__l5e/assets-v1/1509ba3e-c833-43b5-af59-c9d477a6cc3f/archai-cover.jpg",
-  "r2_key": "a/v1/a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66/1509ba3e-c833-43b5-af59-c9d477a6cc3f/archai-cover.jpg",
-  "original_filename": "archai-cover.jpg",
-  "size": 133212,
+  "url": "/__l5e/assets-v1/cb20c703-aa77-41f1-863c-5f2528f4c0e5/cover.jpg",
+  "r2_key": "a/v1/a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66/cb20c703-aa77-41f1-863c-5f2528f4c0e5/cover.jpg",
+  "original_filename": "cover.jpg",
+  "size": 196378,
   "content_type": "image/jpeg",
-  "created_at": "2026-06-23T12:36:49Z"
+  "created_at": "2026-06-23T12:47:30Z"
 }
