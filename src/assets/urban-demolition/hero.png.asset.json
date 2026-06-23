@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "bfe6f686-7ef3-4ccc-bf3a-8935a6923558",
+  "asset_id": "5cdda045-8cc7-4b85-b413-e405f02c8ec2",
   "project_id": "a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66",
-  "url": "/__l5e/assets-v1/bfe6f686-7ef3-4ccc-bf3a-8935a6923558/smart-demolition-hero.png",
-  "r2_key": "a/v1/a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66/bfe6f686-7ef3-4ccc-bf3a-8935a6923558/smart-demolition-hero.png",
-  "original_filename": "smart-demolition-hero.png",
-  "size": 96340,
+  "url": "/__l5e/assets-v1/5cdda045-8cc7-4b85-b413-e405f02c8ec2/hero.png",
+  "r2_key": "a/v1/a8a5815b-c3c3-47f5-ae4f-85b2e63bcb66/5cdda045-8cc7-4b85-b413-e405f02c8ec2/hero.png",
+  "original_filename": "hero.png",
+  "size": 36775,
   "content_type": "image/png",
-  "created_at": "2026-06-23T12:29:14Z"
+  "created_at": "2026-06-23T12:34:13Z"
 }
