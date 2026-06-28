@@ -231,7 +231,7 @@ export const projects: ProjectDetail[] = [
   {
     id: "mass",
     index: "04",
-    title: "HeatGuard",
+    title: "Ushade",
     tag: "Parametric festival shade · AI pipeline · in development",
     year: "2026",
     image: massHero.url,
