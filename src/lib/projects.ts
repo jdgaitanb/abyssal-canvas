@@ -339,8 +339,8 @@ export const projects: ProjectDetail[] = [
     title: "Guided Comparative Assembly",
     tag: "Tangible table · human-in-the-loop · life-cycle comparison",
     year: "2026",
-    image: gca545.url,
-    className: "md:col-span-12",
+    image: gcaHero.url,
+    className: "md:col-span-5",
     subtitle:
       "A tangible table that shows a building's cost, carbon and time while you design it — honest ranges, not single figures.",
     location: "Barcelona · IAAC · MaAI 2025–2026 · Hardware III — Human-in-the-Loop Interactive Systems",
