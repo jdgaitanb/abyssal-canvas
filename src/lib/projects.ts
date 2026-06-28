@@ -82,6 +82,7 @@ import gca565 from "@/assets/guided-comparative-assembly/img-565.png.asset.json"
 import gca566 from "@/assets/guided-comparative-assembly/img-566.png.asset.json";
 import gca567 from "@/assets/guided-comparative-assembly/img-567.png.asset.json";
 import gca578 from "@/assets/guided-comparative-assembly/img-578.png.asset.json";
+import gcaHero from "@/assets/guided-comparative-assembly/hero.jpg.asset.json";
 
 
 
