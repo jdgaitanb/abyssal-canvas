@@ -60,6 +60,30 @@ import sdPlan from "@/assets/urban-demolition/plan.png.asset.json";
 import sdGap1 from "@/assets/urban-demolition/gap1.png.asset.json";
 import sdGap2 from "@/assets/urban-demolition/gap2.png.asset.json";
 
+import gca545 from "@/assets/guided-comparative-assembly/img-545.png.asset.json";
+import gca546 from "@/assets/guided-comparative-assembly/img-546.png.asset.json";
+import gca547 from "@/assets/guided-comparative-assembly/img-547.png.asset.json";
+import gca548 from "@/assets/guided-comparative-assembly/img-548.png.asset.json";
+import gca550 from "@/assets/guided-comparative-assembly/img-550.png.asset.json";
+import gca551 from "@/assets/guided-comparative-assembly/img-551.png.asset.json";
+import gca552 from "@/assets/guided-comparative-assembly/img-552.png.asset.json";
+import gca553 from "@/assets/guided-comparative-assembly/img-553.png.asset.json";
+import gca554 from "@/assets/guided-comparative-assembly/img-554.png.asset.json";
+import gca555 from "@/assets/guided-comparative-assembly/img-555.png.asset.json";
+import gca556 from "@/assets/guided-comparative-assembly/img-556.png.asset.json";
+import gca557 from "@/assets/guided-comparative-assembly/img-557.png.asset.json";
+import gca558 from "@/assets/guided-comparative-assembly/img-558.png.asset.json";
+import gca560 from "@/assets/guided-comparative-assembly/img-560.png.asset.json";
+import gca561 from "@/assets/guided-comparative-assembly/img-561.png.asset.json";
+import gca562 from "@/assets/guided-comparative-assembly/img-562.png.asset.json";
+import gca563 from "@/assets/guided-comparative-assembly/img-563.png.asset.json";
+import gca564 from "@/assets/guided-comparative-assembly/img-564.png.asset.json";
+import gca565 from "@/assets/guided-comparative-assembly/img-565.png.asset.json";
+import gca566 from "@/assets/guided-comparative-assembly/img-566.png.asset.json";
+import gca567 from "@/assets/guided-comparative-assembly/img-567.png.asset.json";
+import gca578 from "@/assets/guided-comparative-assembly/img-578.png.asset.json";
+
+
 
 export interface GalleryItem {
   src: string;
@@ -306,6 +330,60 @@ export const projects: ProjectDetail[] = [
       { src: asCircuit.url, caption: "Circuit Diagram — pattern for one sensor/servo pair, repeated across the 9×9 matrix" },
       { src: asPrototype.url, caption: "Prototype — 430 × 430 mm frame with 3×3 actuator grid morphing the cork surface", span: "full" },
       { src: asFuture.url, caption: "Future optimisation — dynamic sound-absorbing architectural ceiling", span: "full" },
+    ],
+  },
+  {
+    id: "guided-comparative-assembly",
+    index: "07",
+    title: "Guided Comparative Assembly",
+    tag: "Tangible table · human-in-the-loop · life-cycle comparison",
+    year: "2026",
+    image: gca545.url,
+    className: "md:col-span-12",
+    subtitle:
+      "A tangible table that shows a building's cost, carbon and time while you design it — honest ranges, not single figures.",
+    location: "Barcelona · IAAC · MaAI 2025–2026 · Hardware III — Human-in-the-Loop Interactive Systems",
+    role: "Designer · Developer (with Rafik El Khoury, Leonard Elias Böker, Elias El Asmar, Onur Berk Dogrultucu, Vimal TN, Nithik Vairamuthu)",
+    tools: [
+      "TouchDesigner",
+      "OpenCV",
+      "ArUco",
+      "MediaPipe",
+      "RFID (MIFARE Classic 1K)",
+      "OSC / UDP",
+      "Short-throw projector",
+      "Python",
+    ],
+    overview:
+      "Buildings drive ~37% of global CO₂, and ~80% of a building's lifetime impact is locked in during early design — exactly when architects are working with the least reliable numbers.\n\nThe field's own data is unstable:\n\n– Up to 282% — how much the carbon figure for one material can change just by switching database. (Building & Environment · 2023)\n\n– ~200% — how much the same building's result can move when you only change the calculation method. (Renewable & Sustainable Energy Reviews · 2021)\n\nA single number, presented with confidence, misleads. So we asked a different question: what if you could see the consequences — as honest ranges, not single figures — while you configure the building itself?",
+    concept:
+      "The proposition: a table that reads your building.\n\nGuided Comparative Assembly is a tabletop installation. Configuration happens on the surface itself; an overhead short-throw projector returns visual feedback on a nine-panel layout. The system reads the physical objects you place, computes the impact, and shows it back in real time.\n\nThere are two halves to the live loop, and they run side by side: a vision pipeline that reads the working plane and the puck, and a TouchDesigner runtime that responds instantly to what the camera sees.\n\nThe visitor journey — five moves. Each one is an action the camera must confirm against a projected target before the projection advances — nothing happens until the table sees it happen.\n\n1. Method — place a printed model on the RFID pedestal to choose the construction method.\n2. Footprint — dwell a red puck to drop each corner point, drawing the building's plan.\n3. Height — push a linear slider to set the floor count.\n4. Validate — set the material and confirm the summary.\n5. Compare — walk the build phases, then end on a side-by-side comparison.\n\nEvery phase outputs five sourced metrics — CO₂e (kg), Energy (MJ), Labour (hours), Time (days) and Cost (EUR 2026) — each as a range with provenance and a confidence level, never a single figure.\n\nState of the art — two tangible tables, one idea. We did not invent the tangible table. Two precedents taught us the loop.\n\nreacTable (Universitat Pompeu Fabra, 2007) read pucks on a table with a camera and reconfigured sound in real time — the pucks were the controls. Urp (MIT, 1999) put building models on a table and tracked their shadows against a simulated sun — real objects, live environmental feedback.\n\nWe borrowed their loop — project, place, confirm, advance — and aimed it somewhere new. Urp showed the weather around a building. reacTable made sound you could touch. We show what a building costs the planet while you build it. No table before has put guided assembly, tangible controls and life-cycle comparison together in one surface.",
+    process:
+      "The logic — three layers, separated on purpose. Underneath the five visible moves is an eight-state machine — idle, method, footprint, height, materials, validate, phase, compare — with exactly one state active at any moment. We deliberately split the logic into three layers so the system stays debuggable:\n\n1. The content FSM — the visitor-facing journey, eight states, every forward transition camera-confirmed.\n2. The wrapper — calibration, error and reset, which can interrupt the content machine at any point. If the vision heartbeat goes quiet for ten frames the data is stale and the wrapper trips to error.\n3. The visual feedback codes — projection output (disconnected, pending, invalid, valid, summary, comparison), which are not states.\n\nComputer vision — a linear pipeline with one exit. The vision path is five steps — capture → ArUco detect → homography → grace window → OSC out — and it carries three messages to TouchDesigner on UDP port 7000: puck positions, puck-lost, and a heartbeat. It is a pipeline with a single failure exit, not a branching machine: if the heartbeat stops, the wrapper trips to error. A parallel sketch path uses MediaPipe to read the hand for secondary actions — undo, add a window, extrude, reset — each on a timed hold.\n\nThe physical layer — objects you touch:\n\n- Three method models, 3D-printed, each carrying a MIFARE Classic 1K RFID tag — masonry, 3D-printed, prefab.\n- Four corner markers plus one red puck — ArUco IDs 0–3 fix the working plane via homography; the HSV-tracked puck dwells three seconds to drop each footprint point (area via the shoelace formula).\n- The configuration inputs — a linear slider for height and a marker for material.\n\nThe data — one source of truth. Three methods — masonry, 3D-printed, prefab — each with its primary sources, its known wobble, and five metrics per phase. Every figure is stored as a range with a confidence level and assumption notes, so the methodology-wobble layer has something real to draw from.\n\nA single methods database feeds a pipeline that normalizes and ranges the numbers; a metrics engine takes a scenario and returns metrics in either phase mode (foundation → walls → roof → openings → finishing) or lifecycle mode (A1–A3 → A4 → A5 → B → C); and it emits panel-ready strings — including the next user action — straight to the nine projection panels.\n\nThe projection itself is one Script TOP laying out nine named panels, each with a stable position and a stable meaning. The layout is our visual contract: selection clusters top-left, the plan is the centre, impacts read down the right column, and a status bar runs the next action along the floor of the projection.",
+    outcome:
+      "Outlook — closing a loop, not starting one.\n\nMid term — depth and polish: a sound layer (method soundscapes per phase), projection re-calibration under exhibition lighting, and a proximity zoom that reveals detail when you lean in.\n\nLong term — beyond finals: projected phase animations (paused behind the data lock until tier-1 numbers are signed off), more construction methods, and museum deployment with timed public testing. And the real horizon: the client table — standard kit in every studio and contractor, sitting at the client meeting and showing the plan and each phase's cost, carbon and time, so client and consultant decide together, on the numbers.\n\nSelected references — forty-plus citations sit behind the numbers, including Alhumayani et al. (2020) on 3D printing vs concrete LCA, Mohammed et al. (2020) on 3D concrete printing sustainability, Izaola et al. (2023) on Spanish residential carbon baselines, Andersen et al. (2022) on CLT vs concrete with biogenic carbon, Wei et al. (2024) on modular vs conventional construction in Hong Kong, the ITeC BEDEC 2025/2026 release, and EN 15978 + EN 15804 + A2.\n\nGuided Comparative Assembly is a project of IAAC, Institute for Advanced Architecture of Catalonia, developed in the Master in AI for Architecture and the Built Environment 01 (2025–2026) by Rafik El Khoury, Leonard Elias Böker, Elias El Asmar, Onur Berk Dogrultucu, Juan Gaitán, Vimal TN and Nithik Vairamuthu during the MRAC01 MAAI 25/26 Hardware III \"Human-in-the-Loop Interactive Systems\" course with Hamid Peiro and Aleksandra Kraeva.",
+    gallery: [
+      { src: gca546.url, caption: "A single number misleads — buildings drive 37% of global CO₂, 80% locked in early design", span: "full" },
+      { src: gca547.url, caption: "Two halves of the live loop — vision pipeline + TouchDesigner runtime", span: "full" },
+      { src: gca548.url, caption: "Move 1 — Method: place a 3D-printed model on the RFID pedestal", span: "full" },
+      { src: gca550.url, caption: "Move 2 — Footprint: dwell the red puck to drop each corner point", span: "full" },
+      { src: gca551.url, caption: "Move 3 — Height: push a linear slider to set the floor count", span: "full" },
+      { src: gca552.url, caption: "Move 5 — Compare: walk the build phases, end on a side-by-side comparison", span: "full" },
+      { src: gca553.url, caption: "Precedent — reacTable (UPF, 2007): pucks as live controls on a camera-read surface" },
+      { src: gca554.url, caption: "Precedent — Urp (MIT, 1999): physical building models with live environmental feedback" },
+      { src: gca556.url, caption: "Three logic layers — content FSM · wrapper (calibration/error/reset) · visual feedback codes", span: "full" },
+      { src: gca555.url, caption: "Eight-state machine — idle · method · footprint · height · materials · validate · phase · compare" },
+      { src: gca557.url, caption: "Vision pipeline — capture → ArUco detect → homography → grace window → OSC out (UDP 7000)", span: "full" },
+      { src: gca558.url, caption: "Parallel sketch path — MediaPipe hand-tracking for undo, add window, extrude, reset" },
+      { src: gca560.url, caption: "Three 3D-printed method models — masonry · 3D-printed · prefab — each with a MIFARE 1K tag" },
+      { src: gca561.url, caption: "Four ArUco corner markers + red puck — homography + HSV tracking + shoelace area" },
+      { src: gca562.url, caption: "Configuration inputs — linear slider for height, marker for material" },
+      { src: gca563.url, caption: "Methods database — five sourced metrics per phase, each stored as a range with confidence", span: "full" },
+      { src: gca564.url, caption: "Metrics engine — phase mode (foundation → finishing) and lifecycle mode (A1–A3 → C)", span: "full" },
+      { src: gca565.url, caption: "Nine-panel projection — selection top-left, plan centre, impacts right, status along the floor", span: "full" },
+      { src: gca566.url, caption: "Projection layout — the visual contract of the table", span: "full" },
+      { src: gca567.url, caption: "Panel-ready strings emitted straight to the nine projection panels" },
+      { src: gca578.url, caption: "Outlook — the client table: client and consultant deciding together, on the numbers", span: "full" },
     ],
   },
 ];
